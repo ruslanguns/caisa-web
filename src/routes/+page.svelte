@@ -42,7 +42,7 @@
 	</div>
 </section>
 
-<!-- How it works -->
+<!-- How it works . -->
 <section class="text-white bg-black sectionSize">
 	<SegmentTitle dark title="¿Cómo trabajamos?" />
 	<div class="flex flex-col md:flex-row">
