@@ -1,5 +1,8 @@
 <script>
+	import Feature from '$lib/components/Feature.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
+	import SegmentTitle from '$lib/components/SegmentTitle.svelte';
+	import { FEATURES } from '$lib/content/features';
 </script>
 
 <!-- Navigation -->
@@ -23,11 +26,9 @@
 			<button
 				class="px-6 py-4 mb-2 mr-2 text-white bg-black border-2 border-black border-solid rounded-lg"
 			>
-				Call to action
+				Contactarnos
 			</button>
-			<button class="px-6 py-4 border-2 border-black border-solid rounded-lg">
-				Secondary action
-			</button>
+			<button class="px-6 py-4 border-2 border-black border-solid rounded-lg"> Action </button>
 		</div>
 	</div>
 	<div class="flex justify-around mt-8 md:block md:mt-0 md:flex-1">
@@ -43,9 +44,7 @@
 
 <!-- How it works -->
 <section class="text-white bg-black sectionSize">
-	<div>
-		<h2 class="secondaryTitle bg-underline2 bg-100%">How it works</h2>
-	</div>
+	<SegmentTitle dark title="¿Cómo trabajamos?" />
 	<div class="flex flex-col md:flex-row">
 		<div class="flex flex-col items-center flex-1 mx-8 my-4">
 			<div
@@ -85,65 +84,18 @@
 
 <!-- Features -->
 <section class="sectionSize bg-secondary">
-	<div>
-		<h2 class="secondaryTitle bg-underline3 bg-100%">Features</h2>
-	</div>
+	<SegmentTitle title="Feature" />
+
 	<div class="md:grid md:grid-cols-2 md:grid-rows-2">
-		<div class="flex items-start my-6 mr-10 font-montserrat">
-			<img src="assets/logos/Heart.svg" alt="" class="mr-4 h-7" />
-			<div>
-				<h3 class="text-2xl font-semibold">Feature #1</h3>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam voluptate praesentium
-					tenetur earum repellendus! Dicta culpa consequuntur saepe quibusdam labore, est ex ducimus
-					tempore, quos illum officiis, pariatur ea placeat.
-				</p>
-			</div>
-		</div>
-
-		<div class="flex items-start my-6 mr-10 font-montserrat">
-			<img src="assets/logos/Heart.svg" alt="" class="mr-4 h-7" />
-			<div>
-				<h3 class="text-2xl font-semibold">Feature #2</h3>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam voluptate praesentium
-					tenetur earum repellendus! Dicta culpa consequuntur saepe quibusdam labore, est ex ducimus
-					tempore, quos illum officiis, pariatur ea placeat.
-				</p>
-			</div>
-		</div>
-
-		<div class="flex items-start my-6 mr-10 font-montserrat">
-			<img src="assets/logos/Heart.svg" alt="" class="mr-4 h-7" />
-			<div>
-				<h3 class="text-2xl font-semibold">Feature #3</h3>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam voluptate praesentium
-					tenetur earum repellendus! Dicta culpa consequuntur saepe quibusdam labore, est ex ducimus
-					tempore, quos illum officiis, pariatur ea placeat.
-				</p>
-			</div>
-		</div>
-
-		<div class="flex items-start my-6 mr-10 font-montserrat">
-			<img src="assets/logos/Heart.svg" alt="" class="mr-4 h-7" />
-			<div>
-				<h3 class="text-2xl font-semibold">Feature #4</h3>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam voluptate praesentium
-					tenetur earum repellendus! Dicta culpa consequuntur saepe quibusdam labore, est ex ducimus
-					tempore, quos illum officiis, pariatur ea placeat.
-				</p>
-			</div>
-		</div>
+		{#each FEATURES as { title, content }}
+			<Feature {title} {content} />
+		{/each}
 	</div>
 </section>
 
 <!-- Pricing -->
 <section class="py-0 sectionSize bg-secondary">
-	<div>
-		<h2 class="secondaryTitle bg-underline4 mb-0 bg-100%">Pricing</h2>
-	</div>
+	<SegmentTitle title="Pricing" />
 	<div class="flex flex-col w-full md:flex-row">
 		<div
 			class="relative flex flex-col flex-1 px-8 py-5 mx-6 my-8 shadow-2xl bg-secondary rounded-2xl md:top-24"
